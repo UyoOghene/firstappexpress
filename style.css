@@ -1,4 +1,60 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(./images/sky.jpg);
+    height: 100vh;
+    width: 100vw;
+
+}
+
 #styled-header{
-    color: blue;
+    color: rgba(13, 29, 81, 0.562);
     
+}
+h3{
+    border-bottom: 2px solid rgba(13, 29, 81, 0.562) ;
+    border-radius: 10px / 30px;
+    padding: 10px;
+}
+
+.box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgba(13, 29, 81, 0.562);
+    width: 15em;
+    height: 25em;
+    border-radius: 60% / 15%;
+    background: rgba(255, 255, 255, 0.1); /* transparent background */
+    box-shadow: 0 2px 32px rgba(218, 208, 208, 0.916); /* thick, soft shadow */
+    backdrop-filter: blur(10px); /* this creates the frosted effect */
+    -webkit-backdrop-filter: blur(10px); /* Safari support */
+    border: 3px solid rgba(13, 29, 81, 0.562);
+}
+.box:hover{
+    filter: hue-rotate(300deg);
+
+    transform: skew(1deg, 5deg);
+}
+
+span::before{
+    content: 'transition';
+    text-transform: uppercase;
+    animation: word-switch 3s infinite;
+}
+
+@keyframes word-switch {
+    0% {
+        content: 'transition';
+        color: brown;
+    }
+    33% {
+        content: 'transform';
+        color: blueviolet;
+    }
+    60% {
+        content: 'animate';
+        color: royalblue;
+    }
 }

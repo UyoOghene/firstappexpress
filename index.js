@@ -7,13 +7,16 @@ const app = express()
 //     console.log('New request')
 //     response.send('<h1 id="styled-header">UYO and the server <h1>')
 // })
-
-app.listen(3000, () => {
-    console.log('listening on port 3000')
+app.get('/',(req,res) => {
+    res.send('home page')
 })
 
+
+
 app.get('/cats',(req,res) => {
-    res.send('meow')
+    // res.send('meow')
+    res.render('')
+
 })
 
 // app.get('/r/:variable',(req,res) => {
@@ -37,9 +40,6 @@ app.get('/r/:variable/:postid',(req,res) => {
     const {variable, postid} = req.params;
     res.send(`<h1>browsing the ${postid} on ${variable} path</h1>`)
 })
-app.get('/',(req,res) => {
-    res.send('home page')
-})
 
 app.post('/catpost',(req,res) =>{
     res.send('post request')
@@ -48,4 +48,8 @@ app.post('/catpost',(req,res) =>{
 
 app.get('*',(req,res) => {
     res.send('i dont know ')
+})
+
+app.listen(3000, () => {
+    console.log('listening on port 3000')
 })
